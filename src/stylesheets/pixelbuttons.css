@@ -1,0 +1,101 @@
+body {
+  text-align: center
+}
+
+.button-container {
+  margin: 4px;
+  position: relative;
+  display: inline-block;
+  padding: 4px;
+  overflow: hidden;
+  background-clip: content-box;
+  cursor: pointer;
+  user-select: none;
+  font-family: "Courier New";
+  font-weight: bold;
+  font-style: normal;
+  text-align: center;
+}
+
+.button-container > p {
+  margin: 8px;
+}
+
+.corner {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background-image: url("https://svgshare.com/i/158Q.svg");
+  background-size: cover;
+}
+
+.corner-top-left {
+  top: 0;
+  left: 0;
+}
+
+.corner-top-right {
+  top: 0;
+  right: 0;
+  transform: scaleX(-1);
+}
+
+.corner-bottom-left {
+  bottom: 0;
+  left: 0;
+  transform: scaleY(-1);
+}
+
+.corner-bottom-right {
+  bottom: 0;
+  right: 0;
+  transform: rotate(180deg);
+}
+
+.border {
+  position: absolute;
+  background-color: #000;
+}
+
+.border-top,
+.border-bottom {
+  left: 8px;
+  right: 8px;
+  height: 4px;
+}
+
+.border-left,
+.border-right {
+  top: 8px;
+  bottom: 8px;
+  width: 4px;
+}
+
+.border-top {
+  top: 0;
+}
+
+.border-bottom {
+  bottom: 0;
+}
+
+.border-left {
+  left: 0;
+}
+
+.border-right {
+  right: 0;
+}
+
+.input-pixel{
+    font-family: 'Public Pixel', sans-serif;
+    border: 0;
+    padding: 4px 4px;
+    
+}
+
+
+
+label{
+    font-family: 'Public Pixel', sans-serif;
+}
