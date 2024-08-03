@@ -1,17 +1,13 @@
-import Boost from './aboutComponents/boost'
-import Character from './aboutComponents/character'
-import Test from './test'
+import Boost from "./About/Boost";
+import Character from "./About/character";
 
-function About(){
-    return(
-        <>
-            <Boost/>
-            <Character/>
-        </>
-
-
-    )
-
+function About() {
+  return (
+    <>
+      <Boost />
+      <Character />
+    </>
+  );
 }
 
-export default About
+export default About;

@@ -87,15 +87,8 @@ body {
   right: 0;
 }
 
-.input-pixel{
-    font-family: 'Public Pixel', sans-serif;
-    border: 0;
-    padding: 4px 4px;
-    
+
+.button-container:active{
+  transform: translateY(2px);
 }
 
-
-
-label{
-    font-family: 'Public Pixel', sans-serif;
-}

@@ -1,34 +1,43 @@
+import homeimage from "../stylesheets/images/tittle.png";
+import responsiveImage from "../stylesheets/images/title-responsive.png";
+import "../stylesheets/home.css";
+import Typewriter from "typewriter-effect";
+import { useState, useEffect } from "react";
 
-import homeimage from '../stylesheets/images/tittle.png'
-import '../stylesheets/home.css'
-import Typewriter from 'typewriter-effect';
+const ImageSize = (widthSize) => {
+  if (widthSize["widthSize"] > 600) {
+    return <img className="image-top" src={homeimage} />;
+  } else {
+    return <img className="image-top" src={responsiveImage} />;
+  }
+};
 
-function Home(){
+function Home() {
+  const [width, setWidth] = useState(window.innerWidth);
+  useEffect(() => {
+    const handleResize = () => setWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+  return (
+    <>
+      <div className="home-container">
+        <ImageSize widthSize={width} />
 
-
-
-    return(
-        <>
-        <div className='home-container'>
-       
-            <img className='image-top' src={homeimage} />
-      
-        <div className='text-top'>
-            <Typewriter 
-            options={{cursor:'',loop:true,autoStart:true}} 
-                onInit={(typewriter) => {
-                typewriter.typeString('<h1> Welcome to your new Adventure!! </h1>')
-                   .start()
-                   .pauseFor(200)
-              }
-            }
-            />
+        <div className="text-top">
+          <Typewriter
+            options={{ cursor: "", loop: true, autoStart: true }}
+            onInit={(typewriter) => {
+              typewriter
+                .typeString("<h1> Welcome to your new Adventure!! </h1>")
+                .start()
+                .pauseFor(200);
+            }}
+          />
         </div>
-        </div>
-        </>
-    );
+      </div>
+    </>
+  );
 }
-
-
 
 export default Home;
