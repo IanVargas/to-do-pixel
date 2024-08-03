@@ -1,0 +1,41 @@
+.Login-container {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  margin-top: 50%;
+}
+
+.input-pixel {
+  font-family: "Public Pixel", sans-serif;
+  border: 0;
+  padding: 4px 4px;
+}
+
+label {
+  font-family: "Public Pixel", sans-serif;
+}
+
+button {
+  border: none;
+  background-color: white;
+  padding: 8px 30px;
+  cursor: pointer;
+}
+
+.information-box {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 10px 20px;
+}
+
+.active {
+  border-bottom: 2px solid black;
+}
+
+@media only screen and (min-width: 600px) {
+  .Login-container {
+    display: flex;
+    align-items: center;
+    margin-top: 8rem;
+  }
+}

@@ -1,0 +1,93 @@
+.banner-container {
+  display: flex;
+  flex-flow: row;
+  margin-top: 7vh;
+  margin-bottom: 100px;
+  margin-top: 80px;
+}
+
+.banner-info-title {
+  color: black;
+  margin-bottom: 30px;
+  font-family: "Public Pixel", sans-serif;
+  font-size: 1rem;
+  margin-top: 20px;
+}
+.banner-info-description {
+  color: black;
+  font-family: "Public Pixel", sans-serif;
+  font-size: 0.7rem;
+  margin-right: 8%;
+}
+
+.banner-image {
+  width: 40vw;
+  margin-top: 10px;
+}
+
+.has-floating-animation .is-floating-animated {
+  animation: float-up-down 2s ease-in-out infinite both;
+}
+
+@keyframes float-up-down {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .banner-container {
+    display: flex;
+    flex-flow: wrap row;
+    margin-top: 7vh;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+  }
+
+  .banner-info-title {
+    color: black;
+    font-family: "Public Pixel", sans-serif;
+    font-size: 1.7rem;
+    margin-bottom: 70px;
+  }
+
+  .banner-info-description {
+    color: black;
+    font-family: "Public Pixel", sans-serif;
+    font-size: 0.9rem;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 10%;
+  }
+
+  .banner-image {
+    width: 16vw;
+  }
+
+  .has-floating-animation .is-floating-animated {
+    animation: float-up-down 2s ease-in-out infinite both;
+  }
+
+  @keyframes float-up-down {
+    0% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-10%);
+    }
+
+    100% {
+      transform: translateY(0);
+    }
+  }
+}
