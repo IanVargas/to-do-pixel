@@ -1,0 +1,54 @@
+.mobile-menu-box {
+  display: flex;
+  flex-flow: column wrap;
+  z-index: 1;
+  position: absolute;
+  align-items: center;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.hamburguer-menu {
+  width: 45px;
+  height: 45px;
+  padding: 30px -10px;
+  margin-top: -15px;
+}
+
+.hamburguer-menu-box{
+  display: flex;
+  z-index: 1;
+  position: absolute;
+  left: 38vh;
+}
+
+.mobile-menu-item {
+  color: white;
+  text-decoration: none;
+  font-family: "Public Pixel", sans-serif;
+  font-size: 0.9rem;
+  padding: 20px 20px;
+  margin-top: 10px;
+}
+
+.mobile-button {
+  font-size: 0.9rem;
+  background-color: #bc7ef5;
+  padding: 12px 20px;
+  border-radius: 0.5rem;
+}
+
+.mobile-hide-menu {
+  display: none;
+}
+
+
+
+@media only screen and (min-width: 600px) {
+  .mobile-menu-box {
+    display: none;
+  }
+  .hamburguer-menu-box{
+  display: none;
+}
+}

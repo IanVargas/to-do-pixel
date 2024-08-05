@@ -1,4 +1,4 @@
-import homeimage from "../stylesheets/images/tittle.png";
+import Homeimage from "../stylesheets/images/tittle.png";
 import responsiveImage from "../stylesheets/images/title-responsive.png";
 import "../stylesheets/home.css";
 import Typewriter from "typewriter-effect";
@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 
 const ImageSize = (widthSize) => {
   if (widthSize["widthSize"] > 600) {
-    return <img className="image-top" src={homeimage} />;
+    return <img className="image-top" src={Homeimage} />;
   } else {
     return <img className="image-top" src={responsiveImage} />;
   }
@@ -21,7 +21,7 @@ function Home() {
   }, []);
   return (
     <>
-      <div className="home-container">
+      <div className="Home-container">
         <ImageSize widthSize={width} />
 
         <div className="text-top">

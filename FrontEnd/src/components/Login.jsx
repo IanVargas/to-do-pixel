@@ -3,7 +3,7 @@ import PixelContainer from "./PixelContainer";
 function Login() {
   return (
     <>
-      <form className="login-container">
+      <form className="Login-container">
         <div>
           <label>Username</label>
         </div>
@@ -21,7 +21,7 @@ function Login() {
           </PixelContainer>
         </div>
         <PixelContainer>
-          <button className="input-pixel login-button"> Login </button>
+          <button className="input-pixel Login-button"> Login </button>
         </PixelContainer>
       </form>
     </>
