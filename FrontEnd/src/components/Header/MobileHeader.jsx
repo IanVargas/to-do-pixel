@@ -1,5 +1,6 @@
 import "../../stylesheets/mobileheader.css";
 import HamburguerMenu from "../../stylesheets/images/hamburguermenu.png";
+import CloseMenu from "../../stylesheets/images/closemenu.png";
 import MobileMenuItems from "./MobileMenuItems";
 import { useState } from "react";
 
@@ -9,14 +10,18 @@ function MobileHeader() {
   return (
     <>
       <div className="mobile-menu-box">
-        <div className="hamburguer-menu-box">
-          <img
-            onClick={() => {
-              setShowMenu(!showMenu);
-            }}
-            className="hamburguer-menu"
-            src={HamburguerMenu}
-          />
+        <div
+          onClick={() => {
+            setShowMenu(!showMenu);
+          }}
+          className="hamburguer-menu-box"
+        >
+          {!showMenu && (
+            <img className="hamburguer-menu" src={HamburguerMenu} />
+          )}
+          {showMenu && (
+            <img className="hamburguer-menu-close" src={CloseMenu} />
+          )}
         </div>
         {showMenu && <MobileMenuItems />}
       </div>
