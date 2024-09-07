@@ -36,6 +36,6 @@ button {
   .Login-container {
     display: flex;
     align-items: center;
-    margin-top: 8rem;
+    margin: 300px auto;
   }
 }
