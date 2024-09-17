@@ -1,8 +1,18 @@
-import sqlalchemy
-from sqlalchemy import create_engine
-from table_creation import create_tables_database
+from dbmanagemt import DbManagement
+from repositories import UserRepository
+
 
 connection_url = 'postgresql://postgres:SaSha310631@localhost:5432/todopixel'
-engine = create_engine(connection_url, echo=True)
-create_tables_database(engine)
+connect_to_database = DbManagement(connection_url)
+repo = UserRepository(connect_to_database)
+user = {
+    "id" : "7",
+    "username" : "ian3",
+    "password":"123456",
+    "email" : "ian@ian.com",
+    "xp_user" : 45
+}
+
+print(user['id'])
+repo.update_user(user)
 
