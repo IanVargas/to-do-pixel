@@ -1,8 +1,19 @@
 from flask import Flask
-from views import UserView
+from views import UserView,loginView,taskView,RegisterView
+from flask_cors import CORS
 
 app = Flask(__name__)
-user_view_func = UserView.as_view('user_api_endpoint')
-app.add_url_rule('/users/<int:user_id>',methods=['GET','DELETE'],view_func=user_view_func)
-app.add_url_rule('/users/', methods=['PUT','POST'], view_func=user_view_func)
+CORS(app, origins=["http://localhost:5173"])
+login_view_func = loginView.as_view('login_api_endpoint')
+task_view_func = taskView.as_view('tasks_endpoint')
+register_view_func = RegisterView.as_view('register_api_endpoint')
+app.add_url_rule('/login', methods=['POST'],view_func=login_view_func)
+
+
+app.add_url_rule('/main', methods=['POST'],view_func=task_view_func)
+app.add_url_rule('/main/<string:user_id>', methods=['GET'],view_func=task_view_func) 
+
+app.add_url_rule('/register', methods=['POST'],view_func=register_view_func)
+
+
 app.run(host="localhost", debug=True)

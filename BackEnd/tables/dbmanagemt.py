@@ -1,5 +1,5 @@
 import sqlalchemy
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine,insert
 from table_creation import create_tables_database
 
 class DbManagement:
@@ -22,17 +22,20 @@ class DbManagement:
     def upload_to_database(self,query):
         try:
             with self.establish_connection.connect() as connection:
-                connection.execute(query)
-                connection.commit()  
+                query_response = connection.execute(query)
+                connection.commit()
+                return query_response.inserted_primary_key[0]
         except Exception as error:
             print(error)
             
     def get_information(self,query):
         try:
             with self.establish_connection.connect() as connection:
-                test = connection.execute(query)
-                for row in test:
-                    return row
+                result = connection.execute(query)
+                rows = []
+                for row in result:
+                    rows.append(row)
+            return rows
         except Exception as error:
             print(error)
 
