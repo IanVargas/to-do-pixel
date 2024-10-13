@@ -16,6 +16,9 @@ function MobileMenuItems() {
       <Link to="/Login" className="mobile-button mobile-menu-item">
         Login
       </Link>
+      <Link to="/Join" className="mobile-button mobile-menu-item">
+        Register
+      </Link>
     </>
   );
 }

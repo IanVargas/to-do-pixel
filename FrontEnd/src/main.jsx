@@ -20,7 +20,7 @@ const router = createBrowserRouter([
     element: <MainPage/>
   },
   {
-    path: "/join",
+    path: "/Join",
     element: <Register />
   }
 ]);

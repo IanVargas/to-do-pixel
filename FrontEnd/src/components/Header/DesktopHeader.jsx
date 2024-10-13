@@ -21,6 +21,9 @@ function Header() {
           <Link to="/Login" className="desktop-button desktop-menu-item">
             Login
           </Link>
+          <Link to="/Join" className="desktop-button desktop-menu-item">
+            Register
+          </Link>
         </div>
       </div>
     </>
