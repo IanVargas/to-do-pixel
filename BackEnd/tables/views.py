@@ -38,8 +38,8 @@ class loginView(MethodView):
             return Response(status = 400)
         else:
             check_user = self.repository.get_user_by_email(user_info.get("email"))
-            if(check_user.email == user_info.get("email") and check_user.password == user_info.get('password')):
-                token = self.jwt_manager.encode({"id" : check_user.id})
+            if(check_user.get("email") == user_info.get("email") and check_user.get("password") == user_info.get('password')):
+                token = self.jwt_manager.encode({"id" : check_user.get('id')})
                 return jsonify(token = token), 200
 
 class taskView(MethodView):
@@ -57,6 +57,10 @@ class taskView(MethodView):
         decoded_token = self.jwt_manager.decode(user_id)
         get_user = self.repository.get_tasks(decoded_token['id'])
         return jsonify(get_user),200
+    
+    def delete(self,task_id):
+        delete = self.repository.delete_task(task_id)
+        return jsonify(delete),200
     
 class RegisterView(MethodView):
     repository = UserRepository(connect_to_database)

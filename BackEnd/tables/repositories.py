@@ -39,11 +39,11 @@ class UserRepository:
         get_query_by_email = (select(user_table).where(user_table.c.email == user_email))
         get_result = self.db_connection.get_information(get_query_by_email)
         user_information = {
-            'id' : get_result[0],
-            'username': get_result[2],
-            'password': get_result[3]
+            'id' : get_result[0][0],
+            'email': get_result[0][3],
+            'password': get_result[0][2]
         }
-        return get_result
+        return user_information
 
 
 class TaskRepository:
@@ -52,16 +52,14 @@ class TaskRepository:
         self.db_connection = db_connection
 
     def create_task(self,task):
-        print("HERE I AM HERE!!!!!",task)
         create_query = (insert(tasks_table)
                         .values(task))
         response = self.db_connection.upload_to_database(create_query)
         return response
 
-    def delete_task(self,task):
+    def delete_task(self,task_id):
         delete_query = (delete(tasks_table)
-                        .where(tasks_table.c.task == task['task'])
-                        .where(tasks_table.c.user_id == task['user_id']))
+                        .where(tasks_table.c.id == task_id))
         response = self.db_connection.upload_to_database(delete_query)  
         return response
     

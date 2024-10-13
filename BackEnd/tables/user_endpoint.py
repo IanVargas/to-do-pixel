@@ -11,7 +11,8 @@ app.add_url_rule('/login', methods=['POST'],view_func=login_view_func)
 
 
 app.add_url_rule('/main', methods=['POST'],view_func=task_view_func)
-app.add_url_rule('/main/<string:user_id>', methods=['GET'],view_func=task_view_func) 
+app.add_url_rule('/main/<string:user_id>', methods=['GET'],view_func=task_view_func)
+app.add_url_rule('/main/<int:task_id>',methods=['DELETE'],view_func=task_view_func) #cambiar a task
 
 app.add_url_rule('/register', methods=['POST'],view_func=register_view_func)
 

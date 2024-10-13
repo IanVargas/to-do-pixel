@@ -1,5 +1,6 @@
 export function getCoockie(){
     const tokenCheck = document.cookie.match('(^|;)\\s*' + 'userToken' + '\\s*=\\s*([^;]+)')?.pop() || ''
+    console.log(tokenCheck)
     return tokenCheck;
 }
 

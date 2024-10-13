@@ -1,31 +1,14 @@
-import {useCallback, useEffect, useState } from "react";
 import SetTasksList from "../scripts/setTasks";
-import { submitTask } from "../scripts/TaskManagement";
+import '../stylesheets/tasks.css'
 
-function LoadMainPage(){
-    const [newTask,setNewTask] = useState('');
-    
-    function submitNewTask(e){
-        e.preventDefault();
-        const submitTaskToApi = submitTask(newTask)
-        return(
-            <>
-             <SetTasksList/>
-            </>
-        )
-    }
+function LoadMainPage(){    
     return(
         <>
-        <SetTasksList/>
-        <input
-        type='text'
-        value={newTask}
-        onChange={(e) => setNewTask(e.target.value)}
-        />
-        <button type="submit" onClick={submitNewTask}>submit</button>
+        <SetTasksList />
         </>
     );
 }
+
 
 
 
