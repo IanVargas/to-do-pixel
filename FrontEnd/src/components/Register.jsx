@@ -33,51 +33,63 @@ function Register(){
             <form onSubmit={registerUser}>
                 <div>
                     <label>Username:</label>
-                    <input
-                        value={username}
-                        type="text"
-                        id="username"
-                        placeholder="username"
-                        onChange={e => setUsername(e.target.value)}
-                    />
+                    <PixelContainer>
+                        <input
+                            value={username}
+                            type="text"
+                            id="username"
+                            placeholder="username"
+                            onChange={e => setUsername(e.target.value)}
+                        />
+                    </PixelContainer>
                 </div>
                 <div>
                     <label>Email:</label>
-                    <input
-                        value={email}
-                        type="email"
-                        id="registeremail"
-                        placeholder="Insert your email"
-                        onChange={e => setEmail(e.target.value)}
-                    />
+                    <PixelContainer>
+                        <input
+                            value={email}
+                            type="email"
+                            id="registeremail"
+                            placeholder="Insert your email"
+                            onChange={e => setEmail(e.target.value)}
+                        />
+                    </PixelContainer>
                     <label>Email Confirmation:</label>
-                    <input
-                        value={emailConfirmation}
-                        type="email"
-                        id="registeremailconfirmation"
-                        placeholder="Confirm your Email"
-                        onChange={e => setEmailConfirmation(e.target.value)}
-                    />
+                    <PixelContainer>
+                        <input
+                            value={emailConfirmation}
+                            type="email"
+                            id="registeremailconfirmation"
+                            placeholder="Confirm your Email"
+                            onChange={e => setEmailConfirmation(e.target.value)}
+                        />
+                    </PixelContainer>
                 </div>
                 <div>
                     <label>Password:</label>
-                    <input 
-                        value={password}
-                        type='password'
-                        onChange={e => setPassword(e.target.value)}
-                        id="passwordregister"
-                        placeholder="Password"
-                    />
+                    <PixelContainer>
+                        <input 
+                            value={password}
+                            type='password'
+                            onChange={e => setPassword(e.target.value)}
+                            id="passwordregister"
+                            placeholder="Password"
+                        />
+                    </PixelContainer>
                     <label>Password Confirmation:</label>
-                    <input 
-                        value={passwordConfirmation}
-                        type='password'
-                        onChange={e => setPasswordConfirmation(e.target.value)}
-                        id="passwordregistervalidation"
-                        placeholder="Confirm Password"
-                    />
+                    <PixelContainer>
+                        <input 
+                            value={passwordConfirmation}
+                            type='password'
+                            onChange={e => setPasswordConfirmation(e.target.value)}
+                            id="passwordregistervalidation"
+                            placeholder="Confirm Password"
+                        />
+                    </PixelContainer>
                 </div>
-                <button disabled={!(emailMatch && passwordsMatch) }> Register </button>
+                <PixelContainer>
+                    <button disabled={!(emailMatch && passwordsMatch) }> Register </button>
+                </PixelContainer>
             </form>
         </>
     );
